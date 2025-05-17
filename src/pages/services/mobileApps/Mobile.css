@@ -1,0 +1,402 @@
+.mobile-app-overview {
+  padding: 60px 140px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1c1e21;
+}
+
+.mobile-app-overview h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #0a0a0a;
+  margin-bottom: 30px;
+}
+
+.mobile-app-overview p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+text-align: center;
+  margin-bottom: 20px;
+}
+.technologies-container {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.tech-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0d0d0d;
+  margin-bottom: 40px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  justify-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  p: 40px;
+}
+
+.tech-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.tech-icon:hover {
+  transform: scale(1.1);
+}
+
+.tech-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+} 
+
+.services-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+  height: 75vh;
+  width: 98vw;
+}
+
+.services-content {
+  flex: 1;
+}
+
+.services-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.services-content h1 span {
+  color: #222;
+}
+
+.services-gallery {
+  flex: 2;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.services-gallery img {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.service-img {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  transform: rotate(-10deg);
+  transition: transform 0.3s ease;
+  position: absolute;
+}
+
+/* .services-gallery img:hover {
+  transform: translateY(-10px) scale(1.05);
+} */
+
+/* Floating devices positioning like in your image */
+
+/* Floating devices positioning (ALL tilted left now) */
+/* Floating devices positioning - all same tilt left */
+
+
+/* If you want to keep different z-index for layering effect */
+.service-img.img-1 { z-index: 5; }
+.service-img.img-2 { z-index: 4; }
+.service-img.img-3 { z-index: 3; }
+.service-img.img-4 { z-index: 2; }
+.service-img.img-5 { z-index: 1; }
+
+.img-1 {
+  top: -150px;
+  left: 130px;
+  z-index: 3;
+}
+
+.img-2 {
+  top: 70px;
+  left: 170px;
+  z-index: 4;
+}
+
+.img-3 {
+  top: -100px;
+  left: 670px;
+  z-index: 5;
+}
+
+.img-4 {
+  top: -130px;
+  left: 425px;
+  z-index: 2;
+}
+
+.img-5 {
+  top: -180px;
+  left: 450px;
+  z-index: 1;
+}
+
+
+
+
+/* Triangles/Decorative shapes (optional if you want to match the design) */
+.services-section::before,
+.services-section::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  opacity: 0.5;
+}
+
+.services-section::before {
+  border-width: 0 40px 40px 0;
+  border-color: transparent #f5b700 transparent transparent;
+  top: 20%;
+  left: 30%;
+}
+
+.services-section::after {
+  border-width: 0 50px 50px 0;
+  border-color: transparent #9c27b0 transparent transparent;
+  top: 10%;
+  right: 10%;
+}
+
+Carousal css
+
+/*Brand Carousel Styling*/
+.brand-carousel-container {
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.brand-carousel-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #1a1a1a;
+  padding: 40px;
+}
+
+.brand-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  /* background-color: #ffffff; */
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.brand-slide:hover {
+  transform: scale(1.05);
+}
+
+.brand-logo {
+  max-height: 55px;
+  max-width: 300px;
+  object-fit: contain;
+  /* filter: grayscale(100%); */
+  transition: filter 0.3s ease;
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+
+/* .brand-logo:hover {
+  filter: grayscale(0%);
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0px;
+}
+
+.portfolio-title {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.portfolio-grid {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 30px;
+}
+
+.portfolio-card {
+  height: 500px;
+  width: 500px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  
+  background-color: white;
+  
+}
+
+
+
+
+
+.purple-gradient {
+  background: linear-gradient(140deg, #6b4bfd 0%, #38bdf8 100%);
+  width: 600px;
+height: 400px;
+}
+
+.orange-gradient {
+  background: linear-gradient(140deg, #f97316 0%, #fb923c 100%);
+  height:400px;
+  width:500px;
+}
+
+.card-label {
+  color: white;
+  font-weight: 600;
+  position: absolute;
+  top: 5px;
+  left: 25px;
+  
+  font-size: 1rem;
+}
+
+.image-container {
+  height: 400px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  
+  border-radius: 5px;
+}
+
+.card-title {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: black;
+}
+
+.feature-buttons {
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.feature-btn {
+  background-color: white;
+  border: 1px solid orange;
+  border-radius: 15px;
+  padding: 5px 12px;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding-left: 10px;
+}
+
+
+.feature-btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-container {
+    padding: 0 10px;
+  }
+
+  .portfolio-title {
+    font-size: 1.8rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+}

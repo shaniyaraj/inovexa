@@ -1,0 +1,144 @@
+/* .whyus-container {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.whyus-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1c1c1c;
+}
+
+.whyus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.whyus-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  text-align: left;
+}
+
+.check-icon {
+  color: #f8006b;
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+.whyus-item h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.whyus-item p {
+  margin: 5px 0 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+} */
+
+/* .whyus-container {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+} */
+/* .whyus-container {
+  /* padding: 60px 0; 
+  background-color: #fff;
+  text-align: center;
+} */ .whyus-container {
+  padding: 60px 0;              /* Remove horizontal padding */
+  background-color: #fff;
+  text-align: center;
+  width: 98vw;                 /* Full viewport width */
+  margin: 0;                    /* Ensure no default margin */
+}
+
+.whyus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* Two columns */
+  gap: 30px;
+  width: 100%;                  /* Full width */
+  padding: 0 40px;              /* Optional: reduce if you want edge-to-edge */
+  box-sizing: border-box;       /* Ensures padding doesn't overflow */
+}
+
+
+.whyus-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1c1c1c;
+}
+
+/* .whyus-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+} */
+
+/* .whyus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto; /* keep centered */
+  /* padding: 0 15px; /* optional: keeps a bit of breathing room */
+/* } */
+
+.whyus-column {
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+  gap: 70px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.whyus-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+
+.check-icon {
+  color: #f8006b;
+  font-size: 1.5rem;
+  margin-top: 0.2px;
+  /* line-height:0.2px; */
+}
+
+.whyus-item h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1c1c1c;
+  
+}
+
+.whyus-item p {
+  margin: 5px 0 0;
+  font-size: 1.3rem;
+  color: #948e8e;
+  line-height: 1.6;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .whyus-grid {
+    flex-direction: column;
+  }
+}
