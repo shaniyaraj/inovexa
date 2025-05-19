@@ -205,6 +205,7 @@ body {
 .dropdown-menu a {
   cursor: pointer;
 }
+
 .contact-button {
   background-color: #000000;
   color: white;
@@ -222,9 +223,8 @@ body {
   transform: scale(1.1);
 }
 
-/* Hero Section Styles */
+
 .hero-section {
-  /* padding: 5px 40px; */
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
@@ -322,7 +322,6 @@ body {
   margin-right: 8px;
 }
 
-/* Works Section Styles */
 .works-section {
   padding: 80px 20px;
   max-width: 1200px;
@@ -340,7 +339,7 @@ body {
   background: linear-gradient(90deg, rgba(240, 249, 255, 0.8) 0%, rgba(255, 240, 252, 0.8) 50%, rgba(255, 245, 235, 0.8) 100%);
 }
 
-/* Category Tabs */
+
 .category-tabs {
   display: flex;
   justify-content: center;
@@ -383,7 +382,7 @@ body {
   font-size: 14px;
 }
 
-/* Active Indicator */
+
 .active-indicator {
   position: relative;
   height: 4px;
@@ -402,7 +401,7 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Projects Showcase */
+
 .projects-showcase {
   margin-top: 40px;
 }
@@ -412,7 +411,6 @@ body {
   gap: 24px;
 }
 
-/* Left Column - Project Features */
 .project-features {
   flex: 1;
   display: flex;
@@ -464,27 +462,10 @@ body {
   line-height: 1.5;
 }
 
-/* Right Column - Image Showcase */
 .image-showcase {
   flex: 1.2;
 }
-
-/* .image-container {
-  background-color: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  height: 500px;
-  width: 100%;
-}
-
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
-
-/* Hackathon Display - Special Layout */
+/* 
 .hackathon-display {
   display: flex;
   flex-direction: column;
@@ -528,7 +509,7 @@ body {
   font-size: 16px;
 }
 
-/* Slide Indicators */
+
 .slide-indicators {
   display: flex;
   justify-content: center;
@@ -549,9 +530,9 @@ body {
 .indicator.active {
   background-color: #f97316;
   transform: scale(1.2);
-}
+} */
 
-/*Brand Carousel Styling*/
+
 .brand-carousel-container {
   background-color: #f9f9f9;
   text-align: center;

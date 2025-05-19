@@ -103,11 +103,11 @@ const Farmyng = () => {
         </div>
       </div>
 
-      {/* Call To Action */}
-      <div className="cta-wrapper">
+
+      {/* <div className="cta-wrapper">
         <h2 className="cta-title">Want a similar app?</h2>
         <button className="cta-button">Talk to us now!</button>
-      </div>
+      </div> */}
     </div>
   );
 };

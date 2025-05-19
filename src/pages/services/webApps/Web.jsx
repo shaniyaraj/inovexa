@@ -1,12 +1,16 @@
 import React from 'react';
 import '../mobileApps/Mobile.css';
 import './Web.css';
-import kotlin from '../../../assets/kotlin.png';
-import android from '../../../assets/androidStudio.png';
-import flutter from '../../../assets/flutter.svg';
-import swift from '../../../assets/swift.svg';
+// import kotlin from '../../../assets/kotlin.png';
+// import android from '../../../assets/androidStudio.png';
+// import flutter from '../../../assets/flutter.svg';
+// import swift from '../../../assets/swift.svg';
 import reactLogo from '../../../assets/react.svg';
+import gatsby from '../../../assets/gatsby.png';
+import nextjs from '../../../assets/nextjs.png';
 import pwa from '../../../assets/pwaIcon.png';
+import dotnetcore from '../../../assets/dotnetcore.png';
+import postgresql from '../../../assets/postgresql.png';
 import azure from '../../../assets/azure.png';
 import aws from '../../../assets/aws.png';
 import ban1 from '../../../assets/ban1.png';
@@ -39,11 +43,15 @@ import { Autoplay } from 'swiper/modules';
 const WebAppsPage = () => {
   const serviceImages = [ban1, ban2, ban4, ban5];
   const techLogos = [
-    { src: kotlin, alt: 'Kotlin' },
-    { src: android, alt: 'Android Studio' },
-    { src: flutter, alt: 'Flutter' },
-    { src: swift, alt: 'Swift' },
+    // { src: kotlin, alt: 'Kotlin' },
+    // { src: android, alt: 'Android Studio' },
+    // { src: flutter, alt: 'Flutter' },
+    // { src: swift, alt: 'Swift' },
     { src: reactLogo, alt: 'React' },
+    {src: gatsby,alt:'Gatsby'},
+    {src:nextjs, alt:'Nextjs'},
+    {src:dotnetcore,alt:'Dotnetcore'},
+    {src:postgresql,alt:'Postgresql'},
     { src: pwa, alt: 'PWA' },
     { src: azure, alt: 'Azure' },
     { src: aws, alt: 'AWS' },
@@ -120,13 +128,16 @@ const WebAppsPage = () => {
       <div className="mobile-app-overview">
         <h1>Web Application Development Overview</h1>
         <p>
-          We keep experimenting with latest technologies and have successfully created mobile applications using Flutter and React native. Most of
-          our web applications are Progressive Web Apps by default. We have developed mobile applications in various sectors including but not limited
-          to ecommerce, portfolio and land management platform.
+         We are one of the few companies that develop applications from scratch using the latest cutting edge technologies. As a result our <br />application performs better, scales better.
+          We have our own set of libraries that are battle tested - this helps us build applications faster.
+
+
         </p>
         <p>
-          We have developed mobile applications that are capable of handling millions of transactions per week. We partner with early stage startups,
-          SMBs and help them get their product to market faster. Our mobiles apps are multi-lingual, accessible and performant.
+        We have developed web applications that are capable of handling millions of transactions per week. We partner with early stage startups,<br />
+         SMBs and help them get their product to market faster. Our websites have ranked better by Google audits and other performance measuring tools.
+
+
         </p>
       </div>
 

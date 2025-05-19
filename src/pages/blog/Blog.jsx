@@ -16,6 +16,7 @@ import phoneimg from '../../assets/phoneimg.avif';
 import Printer from '../../assets/printer.avif';
 
 import './Blog.css';
+import { Link } from 'react-router-dom';
 
 
 const BlogPage = () => {
@@ -173,7 +174,7 @@ const BlogPage = () => {
           <ul className="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><Link to="/info">Contact</Link></li>
             <li><a href="/portfolio">Portfolio</a></li>
             <li><a href="/careers">Careers</a></li>
             <li className="drop">

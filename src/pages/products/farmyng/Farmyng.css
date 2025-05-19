@@ -2,9 +2,11 @@
     margin:0;
     padding:0;
 }/* App.css */
-
+body{
+  background-color: white;
+}
 .app-container {
-  background-color: #f3f4f6; /* Tailwind's gray-100 */
+   background-color: white;
   min-height: 100%;
   display: flex;
   flex-direction: column;
