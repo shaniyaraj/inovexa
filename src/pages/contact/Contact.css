@@ -1,6 +1,4 @@
-/* ContactForm.css */
 
-/* General styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,7 +12,6 @@
   padding: 20px;
 }
 
-/* Header and Navigation */
 .header {
   display: flex;
   justify-content: space-between;
@@ -24,8 +21,6 @@
   border-bottom: 1px solid #f1f1f1;
 }
 
-
-/* Form Header */
 .form-container {
   max-width: 450px;
   margin: 0 auto;
@@ -57,7 +52,7 @@
   
 }
 
-/* Form Styles */
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -86,16 +81,14 @@
   font-size: 16px;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
-/* .form-input:hover{
-box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.2); 
-} */
+
 .form-input:focus,  .phone-input:focus {
   outline: none;
   border-color: rgb(245, 58, 121);
 }
 
 
-/* Phone Input */
+
 .phone-input-container {
   display: flex;
   border: 1px solid #ddd;
@@ -130,9 +123,7 @@ box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.2);
   border-color: rgb(245, 58, 121);
 }
 
-  
 
-/* Submit Button */
 .submit-container {
   display: flex;
   justify-content: center;
@@ -140,39 +131,18 @@ box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.2);
 }
 
 .submit-button {
-background-color: #000000;
+  background-color: #000000;
   color: white;
   border: none;
-  border-radius: 14px;
+  border-radius: 25px;
   padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 20px; 
+  font-weight: 500;
   cursor: pointer;
   transition: 0.3s ease-in;
 }
+
 .submit-button:hover {
   background-color: black;
   transform: scale(1.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  
-  .nav {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  
-  .form-title {
-    font-size: 32px;
-  }
-  
-  .form-subtitle {
-    font-size: 16px;
-  }
 }

@@ -4,15 +4,13 @@ import interactive from "../../assets/interactive.png"
 import dataHeavy from "../../assets/dataHeavy.png"
 import blazingFast from '../../assets/blazingFast.png'
 import awardWinning from '../../assets/awardWinning.webp'
-import { useEffect, useState } from "react"
-
-
+import { useEffect, useState, useRef } from "react"
 
 const projectsData = {
   enterprise: [
     {
       title: '5 Million + leads in CRM',
-      description: 'Slick application with complex tailor made business reports rendered in seconds - all while munching huge amounts of dataicon',
+      description: 'Slick application with complex tailor made business reports rendered in seconds - all while munching huge amounts of data',
       image: Enterprise,
     },
     {
@@ -48,11 +46,10 @@ const projectsData = {
       title: 'Realtime multi user collaborative editor',
       description: 'Google docs like interactivity and notion like interface built into one.',
       image: interactive,
-      //  isSpecialLayout: true,
     },
     {
       title: 'Not just Text',
-      description: 'Editor supports MCQs, Coding editor and many such components built according to client’s needs',
+      description: "Editor supports MCQs, Coding editor and many such components built according to client's needs",
       image: interactive,
     },
     {
@@ -81,7 +78,7 @@ const projectsData = {
     },
     {
       title: 'Lightning speed - 90 + score',
-      description: "We have bulit websites that have consistency ranked hign in google page audits",
+      description: "We have built websites that have consistently ranked high in google page audits",
       image: blazingFast,
     },
     {
@@ -110,9 +107,6 @@ const projectsData = {
 };
 
 function WorksSection() {
-  const [activeCategory, setActiveCategory] = useState('learning');
-  const [activeSlide, setActiveSlide] = useState(0);
-
   const categories = [
     { id: 'enterprise', name: 'Enterprise scale', tags: ['#SaaS', '#CRM'] },
     { id: 'learning', name: 'Learning platform', tags: ['#LMS'] },
@@ -122,22 +116,111 @@ function WorksSection() {
     { id: 'award', name: 'Award winning app', tags: ['#Flutter'] },
   ];
 
+  // Start with the "Enterprise scale" category as default
+  const [activeCategory, setActiveCategory] = useState('enterprise');
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [autoRotateEnabled, setAutoRotateEnabled] = useState(true);
+  // const [presentationComplete, setPresentationComplete] = useState(false);
+  const sectionRef = useRef(null);
+  const intervalRef = useRef(null);
+  const categoryIntervalRef = useRef(null);
+  const currentCategoryIndexRef = useRef(0); // Keep track of category index
+  // const completedCategoriesRef = useRef(new Set());
 
-  // Auto-rotate slides every 5 seconds
+  // //function to disable scroll
+  // const disableScroll =() => {
+  //   const scrollTop = window.pageYOffset|| document.documentElement.scrollTop;
+  //   const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+  // }
+
+  // Setup tab rotation
   useEffect(() => {
+    // Get the starting index of 'enterprise'
+    currentCategoryIndexRef.current = categories.findIndex(cat => cat.id === activeCategory);
+    
+    const rotateCategories = () => {
+      currentCategoryIndexRef.current = (currentCategoryIndexRef.current + 1) % categories.length;
+      setActiveCategory(categories[currentCategoryIndexRef.current].id);
+      setActiveSlide(0); // Reset to first slide when changing categories
+    };
+
+    // Start rotating categories every 15 seconds
+    if (autoRotateEnabled) {
+      categoryIntervalRef.current = setInterval(rotateCategories, 3000);
+    }
+
+    return () => {
+      if (categoryIntervalRef.current) {
+        clearInterval(categoryIntervalRef.current);
+      }
+    };
+}, [autoRotateEnabled]);
+
+  // Setup slide rotation within active category
+  useEffect(() => {
+    // Clear any existing interval
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
     const projects = projectsData[activeCategory] || [];
-    if (projects.length === 0) return;
+    if (projects.length <= 1 || !autoRotateEnabled) return;
 
-    const interval = setInterval(() => {
-      setActiveSlide((prevSlide) => (prevSlide + 1) % projects.length);
-    }, 5000);
+    // Create new interval for current category
+    // intervalRef.current = setInterval(() => {
+    //   setActiveSlide(prevSlide => (prevSlide + 1) % projects.length);
+    // }, 0000);
 
-    return () => clearInterval(interval);
-  }, [activeCategory]);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [activeCategory, autoRotateEnabled]);
+
+  // Intersection Observer to start animations when section is visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setAutoRotateEnabled(true);
+        } else {
+          setAutoRotateEnabled(false);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   const handleCategoryClick = (categoryId) => {
     setActiveCategory(categoryId);
     setActiveSlide(0); // Reset to first slide when changing categories
+    
+    // Update the current category index reference
+    currentCategoryIndexRef.current = categories.findIndex(cat => cat.id === categoryId);
+    
+    // Temporarily pause auto-rotation when user clicks
+    setAutoRotateEnabled(false);
+    
+    // Clear any existing category rotation interval
+    if (categoryIntervalRef.current) {
+      clearInterval(categoryIntervalRef.current);
+    }
+    
+    // Resume auto-rotation after 10 seconds of inactivity
+    setTimeout(() => {
+      setAutoRotateEnabled(true);
+    }, 3000);
   };
 
   const renderProjects = () => {
@@ -171,25 +254,14 @@ function WorksSection() {
           </div>
 
           {/* Right Column - Image Showcase */}
-          <div className="image-showcase">
-            {projects[activeSlide]?.isSpecialLayout ? (
-              <div className="hackathon-display">
-                <div className="hackathon-main">
-                  <img src="C:\cybermind\assets\EnterpriseScale.png" alt="24 Hour Programming Hackathon" />
-                </div>
-                <div className="hackathon-details">
-                  <img src="/hackathon-card.png" alt="Hackathon Details" />
-                  <img src="/hackathon-schedule.png" alt="Hackathon Schedule" />
-                </div>
-              </div>
-            ) : (
-              <div className="image-container">
-                <img
-                  src={projects[activeSlide]?.image}
-                  alt={projects[activeSlide]?.title}
-                />
-              </div>
-            )}
+          <div className="image-showcase" style={{ transition: 'opacity 0.5s ease-in-out' }}>
+            <div className="image-container">
+              <img
+                src={projects[activeSlide]?.image}
+                alt={projects[activeSlide]?.title}
+                style={{ opacity: 1, transition: 'opacity 0.5s ease-in-out' }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -197,7 +269,7 @@ function WorksSection() {
   };
 
   return (
-    <section className="works-section">
+    <section className="works-section" ref={sectionRef}>
       <h2 className="section-title">Some of our works</h2>
 
       {/* Category Tabs */}
@@ -224,7 +296,8 @@ function WorksSection() {
           className="indicator-line"
           style={{
             left: `${categories.findIndex(cat => cat.id === activeCategory) * (100 / categories.length)}%`,
-            width: `${100 / categories.length}%`
+            width: `${100 / categories.length}%`,
+            transition: 'left 0.3s ease-in-out'
           }}
         ></div>
       </div>
@@ -238,7 +311,12 @@ function WorksSection() {
           <button
             key={index}
             className={`indicator ${index === activeSlide ? 'active' : ''}`}
-            onClick={() => setActiveSlide(index)}
+            onClick={() => {
+              setActiveSlide(index);
+              // Pause auto-rotation temporarily when manually navigating
+              setAutoRotateEnabled(false);
+              setTimeout(() => setAutoRotateEnabled(true), 10000);
+            }}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

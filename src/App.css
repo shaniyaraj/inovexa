@@ -351,7 +351,7 @@ body {
 .category-tab {
   background-color: #f8f9fa;
   border-radius: 8px;
-  padding: 16px 24px;
+  padding: 5px 24px;
   min-width: 169px;
   text-align: center;
   cursor: pointer;
@@ -389,7 +389,7 @@ body {
   background-color: #f1f3f5;
   border-radius: 2px;
   margin-bottom: 40px;
-  width: 1148px;
+  width: 1142px;
 }
 
 .indicator-line {
@@ -422,17 +422,17 @@ body {
   display: flex;
   gap: 16px;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   border: 1px solid #eaecef;
 }
 
-.project-feature.active {
+/* .project-feature.active {
   background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .feature-icon {
   flex-shrink: 0;
@@ -753,6 +753,7 @@ body {
   .footer-links {
     flex-direction: column;
     gap: 32px;
+    background-color: #f8f9fa;
   }
 }
 

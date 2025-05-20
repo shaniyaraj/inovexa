@@ -1,5 +1,145 @@
+// import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+
+// import './Contact.css'
+
+// export default function ContactForm() {
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     contact: '',
+//     email: '',
+//     company: '',
+//     message: ''
+//   });
+// const navigate = useNavigate();
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData(prevState => ({
+//       ...prevState,
+//       [name]: value
+//     }));
+//   };
+
+  
+//   const handleSubmit = (e) => {
+//   e.preventDefault();
+//   console.log('Form submitted:', formData);
+
+  
+
+//   setFormData({
+//     name: '',
+//     contact: '',
+//     email: '',
+//     company: '',
+//     message: ''
+//   });
+
+  
+//   navigate("/thank-you");
+// };
+
+
+//   return (
+//     <div className="container">
+       
+//       <div className="form-container">
+//         <div className="form-header">
+//          <h1 className="form-title">Let's talk</h1>
+//           <p className="form-subtitle">
+//             Fill out the form or write to us at:{' '}
+//             <a href="mailto:contact@cybermindworks.com" className="email-link">
+//               contact@cybermindworks.com
+//             </a>
+//           </p>
+//         </div>
+
+//         <form className="contact-form">
+//           <div className="form-group">
+//             <label htmlFor="name" className="form-label">
+//               Name <span className="required">*</span>
+//             </label>
+//             <input
+//               type="text"
+//               id="name"
+//               name="name"
+//               value={formData.name}
+//               onChange={handleChange}
+//               className="form-input"
+//               required
+//             />
+//           </div>
+
+//           <div className="form-group">
+//             <label htmlFor="contact" className="form-label">
+//               Contact <span className="required">*</span>
+//             </label>
+//             <div className="phone-input-container">
+//               <div className="country-code">
+//                 <span>+91</span>
+//               </div>
+//               <input
+//                 type="tel"
+//                 id="contact"
+//                 name="contact"
+//                 value={formData.contact}
+//                 onChange={handleChange}
+//                 className="phone-input"
+//                 required
+//               />
+//             </div>
+//           </div>
+
+//           <div className="form-group">
+//             <label htmlFor="email" className="form-label">
+//               Email address <span className="required">*</span>
+//             </label>
+//             <input
+//               type="email"
+//               id="email"
+//               name="email"
+//               value={formData.email}
+//               onChange={handleChange}
+//               className="form-input"
+//               required
+//             />
+//           </div>
+
+//           <div className="form-group">
+//             <label htmlFor="company" className="form-label">
+//               Company <span className="required">*</span>
+//             </label>
+//             <input
+//               type="text"
+//               id="company"
+//               name="company"
+//               value={formData.company}
+//               onChange={handleChange}
+//               className="form-input"
+//               required
+//             />
+//           </div>
+
+//           <div className="submit-container">
+//             <button
+//               type="submit"
+//               onClick={handleSubmit}
+//               className="submit-button"
+//             >
+//               Send
+//             </button>
+//           </div>
+//         </form>
+//       </div>
+//     </div>
+//   );
+// }
+
 import { useState } from 'react';
-import './Contact.css'
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; 
+import './Contact.css';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,19 +150,116 @@ export default function ContactForm() {
     message: ''
   });
 
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
+    setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the form data to a server
-    // alert('Form submitted successfully!');
+  const validate = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) newErrors.name = 'Name is required.';
+    if (!/^\d{10}$/.test(formData.contact)) newErrors.contact = 'Enter a valid 10-digit number.';
+    if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Enter a valid email.';
+    if (!formData.company.trim()) newErrors.company = 'Company name is required.';
+
+    return newErrors;
+  };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   const validationErrors = validate();
+  //   if (Object.keys(validationErrors).length > 0) {
+  //     setErrors(validationErrors);
+  //     return;
+  //   }
+
+  //   console.log('Form submitted:', formData);
+
+  //   // Reset form
+  //   setFormData({
+  //     name: '',
+  //     contact: '',
+  //     email: '',
+  //     company: '',
+  //     message: ''
+  //   });
+  //   setErrors({});
+
+  //   // Redirect to thank you page
+  //   navigate("/thank-you");
+  // };
+
+
+// const handleSubmit = async (e) => {
+//   e.preventDefault();
+
+//   const validationErrors = validate();
+//   if (Object.keys(validationErrors).length > 0) {
+//     setErrors(validationErrors);
+//     return;
+//   }
+
+//   try {
+//     const response = await fetch('http://localhost:5000/api/', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify(formData)
+//     });
+
+//     const result = await response.json();
+
+//     if (response.ok) {
+//       console.log('Form submitted:', result);
+
+//       // Reset form
+//       setFormData({
+//         name: '',
+//         contact: '',
+//         email: '',
+//         company: '',
+//       });
+//       setErrors({});
+
+//       // Redirect
+//       navigate("/thank-you");
+//     } else {
+//       console.error('Server error:', result.error || result);
+//       alert(result.error || 'Something went wrong!');
+//     }
+
+//   } catch (err) {
+//     console.error('Network error:', err);
+//     alert('Failed to submit form. Please try again later.');
+//   }
+// };
+
+// Make sure axios is imported
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const validationErrors = validate();
+  if (Object.keys(validationErrors).length > 0) {
+    setErrors(validationErrors);
+    return;
+  }
+
+  try {
+    const response = await axios.post('http://localhost:5000/api/', formData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    console.log('Form submitted:', response.data);
+
+    // Reset form
     setFormData({
       name: '',
       contact: '',
@@ -30,34 +267,39 @@ export default function ContactForm() {
       company: '',
       message: ''
     });
-  };
+    setErrors({});
+
+    // Redirect
+    navigate("/thank-you");
+  } catch (error) {
+    if (error.response) {
+      console.error('Server error:', error.response.data.error || error.response.data);
+      alert(error.response.data.error || 'Something went wrong!');
+    } else {
+      console.error('Network error:', error);
+      alert('Failed to submit form. Please try again later.');
+    }
+  }
+};
+
 
   return (
     <div className="container">
-        {/* Contact Form Section */}
       <div className="form-container">
         <div className="form-header">
-         <h1 className="form-title">Let's talk</h1>
+          <h1 className="form-title">Let's talk</h1>
           <p className="form-subtitle">
             Fill out the form or write to us at:{' '}
             <a href="mailto:contact@cybermindworks.com" className="email-link">
               contact@cybermindworks.com
             </a>
           </p>
-           {/* <h1 className="text-3xl font-bold mb-8 text-center text-black">Let's talk</h1>
-      <p className="text-center mb-2">
-        Fill out the form or write to us at:{' '}
-        <a href="mailto:contact@cybermindworks.com">
-          contact@cybermindworks.com
-        </a>
-      </p> */}
         </div>
 
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit} noValidate>
+          {/* Name */}
           <div className="form-group">
-            <label htmlFor="name" className="form-label">
-              Name <span className="required">*</span>
-            </label>
+            <label htmlFor="name" className="form-label">Name <span className="required">*</span></label>
             <input
               type="text"
               id="name"
@@ -65,19 +307,15 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               className="form-input"
-              required
             />
+            {errors.name && <span className="error">{errors.name}</span>}
           </div>
 
+          {/* Contact */}
           <div className="form-group">
-            <label htmlFor="contact" className="form-label">
-              Contact <span className="required">*</span>
-            </label>
+            <label htmlFor="contact" className="form-label">Contact <span className="required">*</span></label>
             <div className="phone-input-container">
-              <div className="country-code">
-                {/* <span className="phone-icon">📱</span> */}
-                <span>+91</span>
-              </div>
+              <div className="country-code"><span>+91</span></div>
               <input
                 type="tel"
                 id="contact"
@@ -85,15 +323,14 @@ export default function ContactForm() {
                 value={formData.contact}
                 onChange={handleChange}
                 className="phone-input"
-                required
               />
             </div>
+            {errors.contact && <span className="error">{errors.contact}</span>}
           </div>
 
+          {/* Email */}
           <div className="form-group">
-            <label htmlFor="email" className="form-label">
-              Email address <span className="required">*</span>
-            </label>
+            <label htmlFor="email" className="form-label">Email address <span className="required">*</span></label>
             <input
               type="email"
               id="email"
@@ -101,14 +338,13 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               className="form-input"
-              required
             />
+            {errors.email && <span className="error">{errors.email}</span>}
           </div>
 
+          {/* Company */}
           <div className="form-group">
-            <label htmlFor="company" className="form-label">
-              Company <span className="required">*</span>
-            </label>
+            <label htmlFor="company" className="form-label">Company <span className="required">*</span></label>
             <input
               type="text"
               id="company"
@@ -116,37 +352,16 @@ export default function ContactForm() {
               value={formData.company}
               onChange={handleChange}
               className="form-input"
-              required
             />
+            {errors.company && <span className="error">{errors.company}</span>}
           </div>
 
-          {/* <div className="form-group">
-            <label htmlFor="message" className="form-label">
-              Message <span className="required">*</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={4}
-              className="form-textarea"
-              required
-            ></textarea>
-          </div> */}
-
+         
           <div className="submit-container">
-            <button
-              type="submit"
-              onClick={handleSubmit}
-              className="submit-button"
-            >
-              Send
-            </button>
+            <button type="submit" className="submit-button">Send</button>
           </div>
         </form>
       </div>
     </div>
   );
 }
-

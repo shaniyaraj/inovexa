@@ -22,9 +22,18 @@ import OurWorks from './pages/home/OurWorks';
 import MobileAppsPage from './pages/services/mobileApps/Mobile';
 import WebAppsPage from './pages/services/webApps/Web';
 
+import ThankYou from './pages/Thankyou'; // Adjust the path as needed
+
+//ScrollToTop
+import ScrollToTop from './ScrollToTop';
+
+
+
+
 function App() {
   return (
     <div className="App">
+      <ScrollToTop />
       <Header />
 
       <Routes>
@@ -45,7 +54,13 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
-        {/* <Route path="/info" element={<Info />} /> */}
+        <Route path="/info" element={<Info />} />
+        
+
+  {/* other routes */}
+  <Route path="/thank-you" element={<ThankYou />} />
+
+
       </Routes>
 
       <Footer />
@@ -53,4 +68,78 @@ function App() {
   );
 }
 
+
+
+
+
+// const express = require('express');
+// const router = express.Router();
+// const Visit = require('../models/VisitModel');
+
+// // Get client IP from request
+// const getClientIp = (req) => {
+//   return (
+//     req.headers['x-forwarded-for']?.split(',').shift() ||
+//     req.socket?.remoteAddress
+//   );
+// };
+
+// // POST /api/visit - Record a visit
+// router.post('/', async (req, res) => {
+//   const ip = getClientIp(req);
+
+//   try {
+//     let visit = await Visit.findOne({ ipAddress: ip });
+
+//     if (visit) {
+//       // Existing visitor
+//       visit.visitCount += 1;
+//       visit.visitHistory.push({ timestamp: new Date() });
+//       await visit.save();
+//     } else {
+//       // New visitor
+//       visit = new Visit({
+//         ipAddress: ip,
+//         visitHistory: [{ timestamp: new Date() }],
+//       });
+//       await visit.save();
+//     }
+
+//     res.status(200).json({ message: 'Visit recorded', visit });
+//   } catch (err) {
+//     console.error('Error saving visit:', err);
+//     res.status(500).json({ error: 'Server error' });
+//   }
+// });
+
+// module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+

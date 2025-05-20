@@ -1,6 +1,7 @@
 .about-section {
   text-align: center;
-  padding: 60px 20px;
+  padding: 5px 5px;
+  margin-top:0;
 }
 
 .about-section h1 {
@@ -17,7 +18,7 @@
   font-size: 1rem;
   color: #555;
   /* margin-bottom: 40px; */
-   margin-top: 50px; 
+   /* margin-top: 50px;  */
 }
 .context{
   font-size: 1rem;

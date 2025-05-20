@@ -1,10 +1,4 @@
-*{
-    margin:0;
-    padding:0;
-}/* App.css */
-body{
-  background-color: white;
-}
+/* 
 .app-container {
    background-color: white;
   min-height: 100%;
@@ -16,14 +10,14 @@ body{
 }
 
 .title {
-  font-size: 2.6rem; /* Tailwind's text-4xl */
+  font-size: 2.6rem;
   font-weight: 700;
   letter-spacing: 1px;
-  /* margin-bottom: 2.5rem; */
+  
   text-align: center;
   line-height: 1;
-  color: black; /* Tailwind's gray-800 */
-}
+  color: black; 
+  margin-top:0;
 
 .phone-wrapper {
   position: relative;
@@ -35,44 +29,14 @@ body{
   gap: 1.5rem;
 }
 
-/* .phone-frame {
-  width: 13rem; 
-  height: 24rem; 
-  /* background-color: black; */
-  /* Tailwind's rounded-3xl
-  overflow: hidden; */
-  /* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); */
-/* } */ 
 
+ 
 .phone-image {
   width: 100%;
   height: 500px;
   object-fit: cover;
 }
 
-
-/* Overview.css */
-
-/* .overview-section {
-  background-color: #ffffff; 
-  padding: 4rem 2rem;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.overview-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #111827; 
-}
-
-.overview-text {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  color: #4b5563; 
-  font-weight: 400;
-} */
 
 
 .overview-section {
@@ -108,7 +72,7 @@ body{
   flex: 1;
   display: flex ;
   justify-content: center;
-  /* max-width: 400px; */
+  
 } 
 .phone{
   flex: 1;
@@ -119,9 +83,7 @@ body{
   margin: auto;
   height:80vh;
   max-width: 100%;
-  /* max-height: 100%; */
-  /* border-radius: 30px;  */
-  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); */
+  
 }
 .imag2{
    width: 500px;
@@ -136,15 +98,13 @@ body{
   max-width: 100%;
  
 }
-.imag4{
 
-}
 
 
 .text-container {
   flex: 1;
   padding: 20px 40px;
-  /* max-width: 600px; */
+ 
 }
 
 .highlight {
@@ -194,18 +154,159 @@ body{
   transition: background-color 0.3s ease; 
    transition: 0.3s ease-in;
 }  
-/* .contact-button {
-  background-color: #000000;
-  color: white;
-  border: none;
-  border-radius: 40px;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease-in;
-} */
+
 .cta-button:hover {
-  /* background-color: #1a1a1f; */
+  
+  transform: scale(1.1);
+}  
+   */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: white; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+  background-color: white;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 1;
+  color: black;
+}
+
+.phone-wrapper {
+  position: relative;
+  max-width: 80rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.phone-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.overview-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: white;
+}
+
+.overview-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.overview-text {
+  font-size: 1.3rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.localized-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+
+.phone-container,
+.phone {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.img,
+.imag2,
+.imag3 {
+  width: 100%;
+  max-width: 500px;
+  height: 80vh;
+  object-fit: contain;
+  margin: auto;
+}
+
+.text-container {
+  flex: 1;
+  padding: 20px 40px;
+}
+
+.font-heading {
+  font-size: 50px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: #666;
+  font-size: 19px;
+  letter-spacing: 1px;
+  line-height: 1.45;
+}
+
+.highlight {
+  background: linear-gradient(
+    to right,
+    rgb(134, 54, 248),
+    rgb(240, 32, 179),
+    rgb(248, 71, 94),
+    rgb(255, 148, 33)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-wrapper {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #141c2b;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  background-color: #0d0d11;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cta-button:hover {
   transform: scale(1.1);
 }
