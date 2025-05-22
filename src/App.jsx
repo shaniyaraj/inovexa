@@ -23,6 +23,7 @@ import MobileAppsPage from './pages/services/mobileApps/Mobile';
 import WebAppsPage from './pages/services/webApps/Web';
 
 import ThankYou from './pages/Thankyou'; 
+import Apply from "./pages/Careerapply";
 
 import PrivacyPolicy from './pages/Privacy';
 //ScrollToTop
@@ -67,6 +68,7 @@ function App() {
 
         {/* other routes */}
         <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/apply" element={<Apply />} />
 
         {/* footer routing */}
         
