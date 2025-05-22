@@ -1,6 +1,7 @@
+import React from 'react';
 import { Link } from "lucide-react";
 import { Link } from 'react-router-dom';
-import {cmwlogo} from '../../../assets/cmwlogo.svg';
+import cmwlogo from '../../assets/cmwlogo.svg';
 
 
 function Header() {
@@ -10,10 +11,10 @@ function Header() {
   return (
     <header className="header">
       <div className="logo-container">
-        <h1 className="logo-text"><img src={cmwlogo} className="cyberlogo" alt="logo"/>CyberMind Works</h1>
-        {/* <div className="logo-image">
+        <div className="logo-image">
           <img src={cmwlogo} className="cyberlogo" alt="logo"/>
-        </div> */}
+        </div> 
+        <h1 className="logo-text">CyberMind Works</h1>
       </div>
 
       <nav className="main-nav">

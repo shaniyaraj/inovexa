@@ -34,6 +34,12 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.logo-container img {
+  height: 40px;
+  width: auto;
 }
 
 .logo {
@@ -44,7 +50,12 @@ body {
 .logo-text {
   font-size: 22px;
   font-weight: 900;
-  
+}
+
+.cyberlogo {
+  width: 40px;
+  height: auto;
+  display: block;
 }
 
 .main-nav {
@@ -60,7 +71,6 @@ body {
 
 .nav-list :hover {
   color: orangered;
-
 }
 
 .nav-item {

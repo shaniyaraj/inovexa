@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import cmwlogo from '../assets/cmwlogo.svg';
 
 function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -7,20 +8,30 @@ function Header() {
 
   return (
     <header className="header">
-           <div className="logo-container">
-        <Link
-          to="/"
-          style={{
-            textDecoration: 'none',
-            color: 'inherit',
-            display: 'inline-block'
-          }}
-        >
-          <h1 style={{ margin: 0, fontSize: '24px', fontWeight: 'bold' }}>
-            CyberMind Works
-          </h1>
-        </Link>
-      </div>
+          <div className="logo-container">
+            {/* <Link
+              to="/"
+              style={{
+                textDecoration: 'none',
+                color: 'inherit',
+                display: 'inline-block'
+              }}
+            >
+              <img
+                src={cmwlogo}
+                alt="CyberMind Works Logo"
+                style={{ height: '40px', width: 'auto' }}
+              />
+              <h1 style={{ margin: 0, fontSize: '24px', fontWeight: 'bold' }}>
+               CyberMind Works
+              </h1>
+            </Link> */}
+          
+            <Link to="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <img src={cmwlogo} alt="CyberMind Works Logo" />
+              <h1 style={{ margin: 0, fontSize: '24px', fontWeight: 'bold' }}>CyberMind Works</h1>
+            </Link>
+          </div>
 
       <nav className="main-nav">
         <ul className="nav-list">

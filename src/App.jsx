@@ -10,7 +10,7 @@ import ContactForm from './pages/contact/Contact';
 import Careers from './pages/careers/Careers';
 import Blog from './pages/blog/Blog';
 import About from './pages/about/About';
-import Info from './pages/bcontact/Bcontact';
+
 
 // Services
 import Services from './pages/home/Services';
@@ -27,10 +27,15 @@ import ThankYou from './pages/Thankyou'; // Adjust the path as needed
 //ScrollToTop
 import ScrollToTop from './ScrollToTop';
 
+import useVisitTracker from "./useVisitTracker";
+import WhyUs from './pages/home/WhyUs';
+
+//others
 
 
 
 function App() {
+  useVisitTracker();
   return (
     <div className="App">
       <ScrollToTop />
@@ -54,12 +59,17 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
-        <Route path="/info" element={<Info />} />
+        {/* <Route path="/info" element={<Info />} /> */}
         
 
-  {/* other routes */}
-  <Route path="/thank-you" element={<ThankYou />} />
+        {/* other routes */}
+        <Route path="/thank-you" element={<ThankYou />} />
 
+        {/* footer routing */}
+        
+          <Route path="/mobile" element={<MobileAppsPage />} />
+          <Route path="/web" element={<WebAppsPage />} />
+          <Route path="/Why-us" element={<WhyUs/>} />
 
       </Routes>
 
@@ -113,7 +123,6 @@ function App() {
 // });
 
 // module.exports = router;
-
 
 
 
