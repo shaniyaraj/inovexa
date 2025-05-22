@@ -1,0 +1,56 @@
+.privacy-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:black;
+  line-height: 1.5;
+}
+
+.privacy-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.privacy-subtitle {
+  font-size: 1.2rem;
+  text-align: left;
+  margin-bottom: 30px;
+  color:black;
+}
+
+.privacy-text {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color:black;
+}
+
+.section-heading {
+  /* font-weight: 600; */
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 30px 0 15px;
+}
+
+a {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+p{
+    color:black;
+    font-size: 15px;
+    font-weight: 400px;
+}
+span{
+    color:black;
+}
+.sub-heading{
+    font-size: 15px;
+    font-weight:medium;
+}

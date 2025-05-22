@@ -337,8 +337,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .section-title {
+  position: relative;
   font-size: 25px;
   font-weight: 600;
   max-width: 800px;
@@ -346,7 +346,26 @@ body {
   padding: 20px;
   margin: auto;
   color: #24292e;
-  background: linear-gradient(90deg, rgba(240, 249, 255, 0.8) 0%, rgba(255, 240, 252, 0.8) 50%, rgba(255, 245, 235, 0.8) 100%);
+  z-index: 1;
+}
+
+/* Add this below to create a smooth blurred background effect */
+.section-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(100, 130, 151, 0.8) 0%,
+    rgba(211, 100, 189, 0.8) 50%,
+    rgba(231, 157, 83, 0.8) 100%
+  );
+  filter: blur(60px);
+  z-index: -1;
 }
 
 

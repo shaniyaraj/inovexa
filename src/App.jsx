@@ -22,20 +22,23 @@ import OurWorks from './pages/home/OurWorks';
 import MobileAppsPage from './pages/services/mobileApps/Mobile';
 import WebAppsPage from './pages/services/webApps/Web';
 
-import ThankYou from './pages/Thankyou'; // Adjust the path as needed
+import ThankYou from './pages/Thankyou'; 
 
+import PrivacyPolicy from './pages/Privacy';
 //ScrollToTop
 import ScrollToTop from './ScrollToTop';
 
-import useVisitTracker from "./useVisitTracker";
 import WhyUs from './pages/home/WhyUs';
 
 //others
+import Terms from "./pages/Terms";
+
+
 
 
 
 function App() {
-  useVisitTracker();
+  
   return (
     <div className="App">
       <ScrollToTop />
@@ -70,7 +73,13 @@ function App() {
           <Route path="/mobile" element={<MobileAppsPage />} />
           <Route path="/web" element={<WebAppsPage />} />
           <Route path="/Why-us" element={<WhyUs/>} />
+          <Route path="/privacy-terms" element={<PrivacyPolicy/>} />
+          <Route path="/terms" element={<Terms />} />
 
+
+          <Route path="/" element={<Home />} />
+
+ 
       </Routes>
 
       <Footer />
