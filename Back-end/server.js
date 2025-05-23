@@ -41,6 +41,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const Visit = require('../Back-end/model/visit');
 
 const app = express();
 app.use(cors());
@@ -86,29 +87,40 @@ app.post("/api/form", async (req, res) => {
 });
 
 // New endpoint to track visits
-app.post("/api/track-visit", async (req, res) => {
-  try {
-    const { userId } = req.body;
-    if (!userId) return res.status(400).json({ error: "userId is required" });
+// app.post("/api/track-visit", async (req, res) => {
+//   try {
+//     const { userId } = req.body;
+//     if (!userId) return res.status(400).json({ error: "userId is required" });
 
-    // Log the visit
-    await Visit.create({ userId });
+//     // Log the visit
+//     await Visit.create({ userId });
 
-    // Update or create user visits count
-    const user = await User.findOneAndUpdate(
-      { userId },
-      { $inc: { visits: 1 } },
-      { upsert: true, new: true }
-    );
+//     // Update or create user visits count
+//     const user = await User.findOneAndUpdate(
+//       { userId },
+//       { $inc: { visits: 1 } },
+//       { upsert: true, new: true }
+//     );
 
-    // Count total unique users
-    const totalUsers = await User.countDocuments();
+//     // Count total unique users
+//     const totalUsers = await User.countDocuments();
 
-    res.json({ visits: user.visits, totalUsers });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Tracking failed" });
-  }
-});
+//     res.json({ visits: user.visits, totalUsers });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Tracking failed" });
+//   }
+// });
 
 app.listen(5000, () => console.log("Server running on http://localhost:5000"));
+
+
+app.get('/api/visit', async (req, res) => {
+  let visit = await Visit.findOne();
+  if (!visit) {
+    visit = new Visit();
+  }
+  visit.count += 1;
+  await visit.save();
+  res.json({ count: visit.count });
+});

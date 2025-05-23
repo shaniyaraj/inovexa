@@ -12,14 +12,14 @@
   padding: 20px;
 }
 
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
   margin-bottom: 40px;
   border-bottom: 1px solid #f1f1f1;
-}
+} */
 
 .form-container {
   max-width: 450px;
@@ -51,7 +51,9 @@
   cursor: pointer;
   
 }
-
+.email-link:hover{
+  text-decoration: none;
+}
 
 .contact-form {
   display: flex;

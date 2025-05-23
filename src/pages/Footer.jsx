@@ -130,12 +130,14 @@ const Footer = () => {
             <h1>CyberMind Works LLP</h1>
             <ul>
               <li>
-                <a href="mailto:info@cybermindworks.com">
-                  10/15 K.M Towers - 1st Floor, Chakrapani Road, Guindy, Chennai, Tamil Nadu, 60004
-                </a>
+                {/* <a href="mailto:info@cybermindworks.com"> */}
+                  <p>10/15 K.M Towers - 1st Floor, Chakrapani Road,<br /> Guindy, Chennai, Tamil Nadu, 60004</p>
+                {/* </a> */}
               </li>
-              <li><a href="tel:+917500053535">ph: +91 75000 53535</a></li>
-              <li><a href="https://www.cybermindworks.com" target="_blank" rel="noopener noreferrer">www.cybermindworks.com</a></li>
+              {/* <li><a href="tel:+917500053535">PH: +91 75000 53535</a></li> */}
+              <p>PH: +91 75000 53535</p>
+              {/* <li><a href="https://www.cybermindworks.com" target="_blank" rel="noopener noreferrer">www.cybermindworks.com</a></li> */}
+              <p>www.cybermindworks.com</p>
               <li><a href="mailto:contact@cybermindworks.com">contact@cybermindworks.com</a></li>
             </ul>
           </div>
