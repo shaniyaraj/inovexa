@@ -162,9 +162,9 @@ const Profitabill = () => {
         <h2 className="overview-title">Overview</h2>
         <p className="overview-text">
           Profitabill is a SaaS with advanced billing, customer management and marketing engine for the beauty & <br />
-          wellness industry. It runs completely on cloud and supports multiple branches for each vendor. Its built in <br />
-          marketing engine and appointment system makes it easy for the business to manage their spas & salons <br />
-          online. It is one of the first software to support role based login to restrict access to staffs using the <br />
+          wellness industry. It runs completely on cloud and supports multiple branches for each vendor. Its built in<br />
+          marketing engine and appointment system makes it easy for the business to manage their spas & salons<br />
+          online. It is one of the first software to support role based login to restrict access to staffs using the<br />
           software.
         </p>
       </section>

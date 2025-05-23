@@ -55,7 +55,8 @@
   /* padding: 60px 0; 
   background-color: #fff;
   text-align: center;
-} */ .whyus-container {
+} */ 
+ .whyus-container {
   padding: 60px 0;              /* Remove horizontal padding */
   background-color: #fff;
   text-align: center;
@@ -140,5 +141,32 @@
 @media (max-width: 768px) {
   .whyus-grid {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .whyus-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px; /* Less padding for small screens */
+    gap: 30px; /* Reduce gap between items */
+  }
+
+  .whyus-column {
+    margin-left: 0;
+    gap: 40px; /* Adjust vertical spacing between items */
+  }
+
+  .whyus-item {
+    flex-direction: row; /* Keep icon and text side by side */
+    align-items: flex-start;
+  }
+
+  .whyus-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .whyus-item p {
+    font-size: 1.1rem;
   }
 }

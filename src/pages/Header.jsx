@@ -7,6 +7,13 @@ function Header() {
   const [productsOpen, setProductsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);  // New: Mobile menu toggle
 
+   // ✅ NEW: Helper to close everything
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setServicesOpen(false);
+    setProductsOpen(false);
+  };
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
     // Close dropdowns when menu toggles (optional)
@@ -19,24 +26,27 @@ function Header() {
   return (
     <header className="header">
       <div className="logo-container">
+        {/* Hamburger Button */}
+        <button
+          className={`hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          type="button"
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
+
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '10px' }}>
           <img src={cmwlogo} alt="CyberMind Works Logo" />
           <h1 style={{ margin: 0, fontSize: '22px', fontWeight: '620' }}>CyberMind Works</h1>
         </Link>
       </div>
 
-      {/* Hamburger Button */}
-      <button
-        className={`hamburger ${menuOpen ? 'open' : ''}`}
-        onClick={toggleMenu}
-        aria-label="Toggle menu"
-        aria-expanded={menuOpen}
-        type="button"
-      >
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </button>
+      {/* ✅ Add this right here */}
+      {menuOpen && <div className="mobile-overlay active" onClick={closeMenu} />}
 
       {/* Navigation Menu */}
       <nav className={`main-nav ${menuOpen ? 'active' : ''}`}>

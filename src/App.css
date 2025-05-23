@@ -408,7 +408,6 @@ body {
   
 }
 
-
 .category-tabs {
   display: flex;
   justify-content: center;
@@ -667,6 +666,79 @@ body {
   fill: currentColor;
 }
 
+.appscale-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  min-height: 100px;
+}
+
+.award-card {
+  background-color: #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.award-image {
+  max-width: 400px;
+  height: 300px;
+  display: block;
+  border-radius: 2px;
+}
+
+.description-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #1c1c1c;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #00cc00;
+  font-weight: bold;
+}
+
+
+.idea-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fcfcfc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.idea-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.idea-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.idea-button {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.idea-button:hover {
+  background-color: #333;
+  transform: scale(1.1);
+}
+
 .copyright {
   text-align: center;
   margin-top: 20px;
@@ -757,9 +829,75 @@ body {
     gap: 32px;
     background-color: #f8f9fa;
   }
+}
+
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .hero-section {
+    padding: 20px 15px !important; /* Reduce top/bottom padding */
+  }
+
+  .works-section {
+    padding: 40px 15px !important; /* Reduce top/bottom padding */
+  }
+
+  .section-title {
+    padding: 10px 0; /* Reduce title spacing */
+  }
+
+  .trusted-by {
+    margin-top: 20px; /* Reduce margin above 'Trusted by' */
+  }
+
+  .category-tabs {
+    gap: 8px;
+  }
+
+  .category-tab {
+    /* min-width: 100px;
+    padding: 10px 12px; */
+    display: none;
+  }
+
+  .category-tab h3 {
+    font-size: 14px;
+  }
+
+  .tag {
+    font-size: 12px;
+  }
+
+  .active-indicator{
+    display: none;
+  }
+
   /* Show hamburger on mobile */
   .hamburger {
     display: flex;
+  }
+
+  /* ✅ NEW: Overlay that appears behind the nav */
+  .mobile-overlay {
+    position: fixed;
+    top: 60px; /* Match nav top */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100; /* Below .main-nav (z-index: 105) */
+    display: none;
+  }
+
+  .mobile-overlay.active {
+    display: block;
   }
 
   /* Mobile nav slides in from right */
@@ -807,111 +945,6 @@ body {
   /* Contact button styling for mobile */
   .contact-button {
     margin-left: 0;
-  }
-}
-
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 28px;
-  }
-
-  .hero-subtitle {
-    font-size: 16px;
-  }
-
-  .category-tabs {
-    gap: 8px;
-  }
-
-  .category-tab {
-    /* min-width: 100px;
-    padding: 10px 12px; */
     display: none;
   }
-
-  .category-tab h3 {
-    font-size: 14px;
-  }
-
-  .tag {
-    font-size: 12px;
-  }
-
-  .active-indicator{
-    display: none;
-  }
-}
-
-.appscale-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-  min-height: 100px;
-}
-
-.award-card {
-  background-color: #ccc;
-  padding: 5px;
-  border-radius: 4px;
-  margin-bottom: 30px;
-}
-
-.award-image {
-  max-width: 400px;
-  height: 300px;
-  display: block;
-  border-radius: 2px;
-}
-
-.description-text {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #1c1c1c;
-  line-height: 1.6;
-}
-
-.highlight {
-  color: #00cc00;
-  font-weight: bold;
-}
-
-
-.idea-section {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: #fcfcfc;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.idea-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 20px;
-}
-
-.idea-description {
-  font-size: 1.1rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.idea-button {
-  background-color: #111;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.idea-button:hover {
-  background-color: #333;
-  transform: scale(1.1);
 }

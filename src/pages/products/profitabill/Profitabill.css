@@ -12,24 +12,37 @@
 
 .overview-section {
   text-align: center;
-  /* padding: 60px 20px; */
-  padding: 60px 140px;
+  padding: 60px 20px;
   background-color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+/* 
 .overview-title {
   font-size: 2.5rem;
   font-weight: 700;
   color: #111;
   margin-bottom: 20px;
-} 
+}
+
+.overview-text {
+  font-size: 1.3rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 30px;
+} */
+ .overview-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+}
+
 .overview-text {
   font-size: 1.3rem;
   color: #666;
   line-height: 1.7;
   margin-bottom: 30px;
 }
+
 
 .features-wrapper {
   padding: 4rem 2rem;
@@ -138,8 +151,6 @@
   margin: 0 0 10px 0; /* remove top margin */
 }
 
-
-
 .profitabill-text p {
   font-size: 1.5rem;
   color: #000000;
@@ -163,3 +174,124 @@
   transform: rotate(15deg); /* reverse tilt to upright individual images */
   transition: transform 0.3s ease;
 }
+
+/* Your existing CSS with these key changes for mobile */
+
+/* @media screen and (max-width: 480px) {
+  .overview-section {
+    padding: 30px 15px;
+  }
+
+  .overview-title {
+    text-align: left;
+    font-size: 1.8rem;
+  }
+
+  .overview-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+  } */
+
+  /* .profitabill-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 15px;
+    max-height: none; 
+  }
+
+  .profitabill-text {
+    flex: none;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .profitabill-text h1 {
+    font-size: 2.5rem;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  .profitabill-text p {
+    font-size: 1.2rem;
+    text-align: left;
+    color: #666;
+  }
+
+  /* .profitabill-images {
+    flex: none;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    right: 0; 
+    transform: none; 
+    padding: 0 10px;
+  }
+
+  .box1 {
+    max-width: 100%;
+    transform: none; 
+    border-radius: 12px;
+    box-shadow: rgba(0,0,0,0.1);
+  }
+
+  .feature-section {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+
+  .feature-section.reverse {
+    flex-direction: column; /* Override reverse for mobile */
+  /* } */
+
+    /* Ensure proper order: image first, then text for each section */
+  /* .feature-section .feature-image {
+    order: 2;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .feature-section .feature-text {
+    order: 1;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  } */
+
+  /* For reverse sections, maintain the same order on mobile */
+  /* .feature-section.reverse .feature-image {
+    order: 1;
+  }
+
+  .feature-section.reverse .feature-text {
+    order: 2;
+  } */
+
+  /* .feature-text h2 {
+    font-size: 1.4rem;
+    text-align: left;
+    padding-left: 0 !important;
+    margin-bottom: 15px;
+  } */
+
+  /* .feature-text p {
+    font-size: 0.95rem;
+    text-align: justify;
+    padding-left: 0 !important;
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .features-wrapper {
+    padding: 2rem 1rem;
+  }
+} */ 

@@ -388,15 +388,28 @@ height: 400px;
 }
 
 @media (max-width: 480px) {
-  .portfolio-container {
-    padding: 0 10px;
+  .services-section {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 200px; /* increase if images overflow */
+    justify-content: flex-start;
   }
 
-  .portfolio-title {
-    font-size: 1.8rem;
+  .services-gallery {
+    margin-top: 150px;
+    margin-right: 800px;
+    position: relative; /* allow absolute children to position correctly */
   }
 
-  .card-title {
-    font-size: 1.3rem;
+  .service-img {
+    transform: scale(0.8); /* optional: scale down if too large for small screen */
+  }
+
+
+  .img-1, .img-2, .img-3, .img-4, .img-5 {
+    position: relative;
+    top: auto;
+    left: 0px;
+    z-index: 1;
   }
 }
