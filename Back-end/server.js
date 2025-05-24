@@ -1,47 +1,8 @@
-// const express = require("express");
-// const mongoose = require("mongoose");
-// const cors = require("cors");
-
-// const app = express();
-// app.use(cors());
-// app.use(express.json());
-
-// mongoose.connect("mongodb://localhost:27017/formdata", {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
-
-// // const FormSchema = new mongoose.Schema({
-// //   name: String,
-// //   email: String,
-// //   message: String,
-// // });
-// const FormSchema = new mongoose.Schema({
-//   name: String,
-//   contact: Number,
-//   email: String,
-//   company: String,
-// });
-
-// const Form = mongoose.model("Form", FormSchema);
-
-// app.post("/api/form", async (req, res) => {
-//   try {
-//     const form = new Form(req.body);
-//     await form.save();
-//     res.status(201).send("Form submitted");
-//   } catch (err) {
-//     res.status(400).send("Error saving data");
-//   }
-// });
-
-// app.listen(5000, () => console.log("Server running on http://localhost:5000"));
-
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const Visit = require('../Back-end/model/visit');
+const { google } = require("googleapis");
+const cron = require('node-cron');
 
 const app = express();
 app.use(cors());
@@ -68,13 +29,6 @@ const UserSchema = new mongoose.Schema({
 });
 const User = mongoose.model("User", UserSchema);
 
-// New Visit schema: logs each visit with timestamp
-const VisitSchema = new mongoose.Schema({
-  userId: { type: String, required: true },
-  timestamp: { type: Date, default: Date.now },
-});
-const Visit = mongoose.model("Visit", VisitSchema);
-
 // Your existing form POST endpoint
 app.post("/api/form", async (req, res) => {
   try {
@@ -86,41 +40,110 @@ app.post("/api/form", async (req, res) => {
   }
 });
 
-// New endpoint to track visits
-// app.post("/api/track-visit", async (req, res) => {
-//   try {
-//     const { userId } = req.body;
-//     if (!userId) return res.status(400).json({ error: "userId is required" });
-
-//     // Log the visit
-//     await Visit.create({ userId });
-
-//     // Update or create user visits count
-//     const user = await User.findOneAndUpdate(
-//       { userId },
-//       { $inc: { visits: 1 } },
-//       { upsert: true, new: true }
-//     );
-
-//     // Count total unique users
-//     const totalUsers = await User.countDocuments();
-
-//     res.json({ visits: user.visits, totalUsers });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Tracking failed" });
-//   }
-// });
-
-app.listen(5000, () => console.log("Server running on http://localhost:5000"));
-
-
-app.get('/api/visit', async (req, res) => {
-  let visit = await Visit.findOne();
-  if (!visit) {
-    visit = new Visit();
-  }
-  visit.count += 1;
-  await visit.save();
-  res.json({ count: visit.count });
+//google analytics
+const auth = new google.auth.GoogleAuth({
+  keyFile: "service-account-key.json",
+  scopes: [
+    "https://www.googleapis.com/auth/analytics.readonly",
+    "https://www.googleapis.com/auth/spreadsheets",
+  ],
 });
+
+const GA4_PROPERTY_ID = "490361726";
+const SPREADSHEET_ID = "1ZfJBnBZcKn4SG_L56xieXbmEqw5lZxWG1iEg5tM8tZY";
+
+// Function to sync analytics data
+async function syncAnalyticsData() {
+  try {
+    const authClient = await auth.getClient();
+
+    const analyticsData = google.analyticsdata({
+      version: "v1beta",
+      auth: authClient,
+    });
+
+    const response = await analyticsData.properties.runReport({
+      property: `properties/${GA4_PROPERTY_ID}`,
+      requestBody: {
+        dimensions: [{ name: "date" }],
+        metrics: [{ name: "activeUsers" }],
+        dateRanges: [{ startDate: "7daysAgo", endDate: "today" }],
+      },
+    });
+
+    const rows = response.data.rows || [];
+    const values = [["Date", "Active Users"]];
+    rows.forEach((row) => {
+      values.push([
+        row.dimensionValues[0].value,
+        row.metricValues[0].value,
+      ]);
+    });
+
+    const sheets = google.sheets({ version: "v4", auth: authClient });
+    await sheets.spreadsheets.values.update({
+      spreadsheetId: SPREADSHEET_ID,
+      range: "Sheet1!A1",
+      valueInputOption: "RAW",
+      requestBody: {
+        values,
+      },
+    });
+
+    console.log("Cron job: Successfully synced analytics data to Google Sheets!");
+  } catch (error) {
+    console.error("Cron job error:", error);
+  }
+}
+
+// Schedule cron job to run every day at midnight (00:00)
+cron.schedule('0 0 * * *', () => {
+  console.log('Running scheduled analytics sync...');
+  syncAnalyticsData();
+});
+
+app.get("/sync-analytics", async (req, res) => {
+  try {
+    const authClient = await auth.getClient();
+
+    const analyticsData = google.analyticsdata({
+      version: "v1beta",
+      auth: authClient,
+    });
+
+    const response = await analyticsData.properties.runReport({
+      property: `properties/${GA4_PROPERTY_ID}`,
+      requestBody: {
+        dimensions: [{ name: "date" }],
+        metrics: [{ name: "activeUsers" }],
+        dateRanges: [{ startDate: "7daysAgo", endDate: "today" }],
+      },
+    });
+
+    const rows = response.data.rows || [];
+    const values = [["Date", "Active Users"]];
+    rows.forEach((row) => {
+      values.push([
+        row.dimensionValues[0].value,
+        row.metricValues[0].value,
+      ]);
+    });
+
+    const sheets = google.sheets({ version: "v4", auth: authClient });
+    await sheets.spreadsheets.values.update({
+      spreadsheetId: SPREADSHEET_ID,
+      range: "Sheet1!A1",
+      valueInputOption: "RAW",
+      requestBody: {
+        values,
+      },
+    });
+
+    res.send("Synced analytics data to Google Sheets!");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error syncing analytics data.");
+  }
+});
+
+app.listen(8000, () => console.log("Server running on http://localhost:8000"));

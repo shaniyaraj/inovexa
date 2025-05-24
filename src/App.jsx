@@ -34,11 +34,25 @@ import WhyUs from './pages/home/WhyUs';
 //others
 import Terms from "./pages/Terms";
 
-
+import { useEffect } from "react";
+import axios from "axios";
 
 
 
 function App() {
+
+
+
+// useEffect(() => {
+//   // Trigger backend to sync GA4 data to Sheets
+//   axios.get("http://localhost:3001/sync-analytics")  // or your deployed backend URL
+//     .then(res => {
+//       console.log("Analytics sync triggered:", res.data);
+//     })
+//     .catch(err => {
+//       console.error("Sync failed:", err);
+//     });
+// }, []);
   
   return (
     <div className="App">
