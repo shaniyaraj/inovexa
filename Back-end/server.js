@@ -42,7 +42,7 @@ app.post("/api/form", async (req, res) => {
 
 //google analytics
 const auth = new google.auth.GoogleAuth({
-  keyFile: "service-account-key.json",
+  keyFile: "./config/service-account-key.json",
   scopes: [
     "https://www.googleapis.com/auth/analytics.readonly",
     "https://www.googleapis.com/auth/spreadsheets",
