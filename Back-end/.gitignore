@@ -10,7 +10,7 @@ yarn-error.log
 .env.*.local
 
 # Google service account key
-# config/service-account-key.json
+config/service-account-key.json
 
 # IDE
 .idea/
