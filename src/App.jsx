@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import "../src/App.css"
+import useCustomAnalytics from './hooks/useCustomAnalytics';
 
 import Header from './pages/Header';
 import Footer from './pages/Footer';
@@ -33,26 +34,13 @@ import WhyUs from './pages/home/WhyUs';
 
 //others
 import Terms from "./pages/Terms";
-
-import { useEffect } from "react";
-import axios from "axios";
+import Analytics from "./pages/Analytics";
 
 
 
 function App() {
-
-
-
-// useEffect(() => {
-//   // Trigger backend to sync GA4 data to Sheets
-//   axios.get("http://localhost:3001/sync-analytics")  // or your deployed backend URL
-//     .then(res => {
-//       console.log("Analytics sync triggered:", res.data);
-//     })
-//     .catch(err => {
-//       console.error("Sync failed:", err);
-//     });
-// }, []);
+  // Use custom analytics instead of Google Analytics
+  useCustomAnalytics();
   
   return (
     <div className="App">
@@ -91,6 +79,7 @@ function App() {
           <Route path="/Why-us" element={<WhyUs/>} />
           <Route path="/privacy-terms" element={<PrivacyPolicy/>} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/analytics" element={<Analytics />} />
 
 
           <Route path="/" element={<Home />} />
