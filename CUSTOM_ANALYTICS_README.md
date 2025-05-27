@@ -42,8 +42,10 @@ For each visitor, the system collects:
    ```
 
 3. **Configure Google Sheets API**:
-   - Make sure your `service-account-key.json` is in the `Back-end/config/` directory
+   - Copy your Google Cloud service account key to `Back-end/config/service-account-key.json`
+   - Use `Back-end/config/service-account-key.example.json` as a template
    - Update the `SPREADSHEET_ID` in `server.js` if needed
+   - **Important**: Never commit the actual service account key to Git!
 
 4. **Start the backend server**:
    ```bash

@@ -45,7 +45,7 @@ app.post("/api/form", async (req, res) => {
 
 // Google Sheets configuration for custom analytics
 const auth = new google.auth.GoogleAuth({
-  keyFile: "./config/service-account-key.json",
+  keyFile: "./config/service-account-key.json", // Make sure this file exists locally but is not committed
   scopes: [
     "https://www.googleapis.com/auth/spreadsheets",
   ],
@@ -251,21 +251,3 @@ cron.schedule('0 * * * *', () => {
 });
 
 app.listen(8000, () => console.log("Server running on http://localhost:8000"));
-
-
-
-
-
-// {
-//   "type": "service_account",
-//   "project_id": "cybermind-460717",
-//   "private_key_id": "203372b3b7b79eefb6383deed7ad50afbd1cc5a2",
-//   "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCpVw22SkDbCvby\nKJSKIH8uGX08cdXfhcNr27tg16kAgavYFUl2uUMkYgstp+J41t+ahvKwpG5OYxST\nbHrCi2zTDdP1dIgJML4FpIu/t+AG8+NCzwWSBQ4kJH2/PcR0l2E+SIEqMH9O2QEN\nGTPdx0uGWGkA8O4j9Kr/qh/PMLe/jWObGjmxVgqdETR7x5BjG6hg9oGjm95LqjEL\n5uASZrKWL2K8ykHF5jomjVF+czTiR3ews8hd60wQS/37fF7qCMBGw8ZAvXyifUoH\nGmkJW3SB+w3DHDG2Ctyl+Qm3L/JKsfGnIePwpz7zrNAv7OPs9xByRPgEfUa2xQo1\nouN3UVj9AgMBAAECggEASHIXSizjKTK8KiZlQeCcOFcsRl83Dfz2eV7Uf55TzYUs\nRPH6b2Hb0SVmvd4MnADlQYFJM3vtOvjVdSqcLD2kzXglfWWgyznAmb5nERqzq5XM\nXKkfq3QhNCIub9IXiX+32QMAy1FbLZrWAcoN7+wSqgOJzJ7GariCLYWVPTkM61P6\nDRNEY+d5VfZL9oZQGvJqTqWtZE7CkLJB4mMyS4IfEO+Qzof1/EVlg3KAY0rV4JtO\nfjD3dpvslJdut2ZNQA9ZFBw6u+GNDvbCKG0C31PI12aflLODJJqgCtEfGBC+rzXz\nf1nwWrG6ModELXS4Swp3S5Mh96a9fzgBRXPi0257awKBgQDXuZqQoXLWI4tBj665\nVElkqo2nrqkYtMw2kHcCc8LuWehmJpBrYpc9RIiWjbcHB58Rqdylc9H4qY459lG2\nkjc+ZCK+aH/M4LTCCwht1Uz40522yK9Uvr6s3hwvnFMqjuzMqtm4MYR+P5vX9Myq\n9GvHbvMh8/ovwoseqNXqecAhwwKBgQDI9IT5iIXKuW6Okt648VVzeD+W+FkdF9WT\n2Rf6J9UuSrBUPpn1wjaf7OXBjrFimjB3geA/UbNcwWmxUCSC5SCurjY7KZHGj4HX\nO3VFAfgVi1EntLwgp6Tk2J7XlUq7yCnnVAFIixz+CA8scUMmRNsCwvQ3A/b15skz\n3W6LsaguPwKBgEq4cx0djtU1QorW5cIzu6gumxo1mUSBeyp7J32l8yLz6VdYjDVl\n1NTX5Cehtn+s2CAaId79GwFyWV0iQHNoedIWhSJGt92TB4keoTDJ7PtS8RHauUA1\nQX5HAKRNFVFsaAEMPJVcMXQ5PBW1KR8dwic1+ukLxOC+Fcns2Qt6WF5ZAoGBAINY\n76F6TpjW4yBldxZDB6tVqZqv8O9HKN5eQ4HKj1iWkPI/iLpNmw6k9PeyoNbmGU/D\noCNC741tDfxLedHkmZwTWncJELNMEX3w6xGT2+eZDA5734soiGrb+9bFSfe7OUhu\na/hSlTylX+WYkl9tGgmQC7f5622Gz3QLA7pjAJ5ZAoGBAL5LQXucCG9BEhHsFkDj\nYRg85RrNPokd0PUobng1JRQ22AxQ1GNr5tgfkkKLILD1TjBaOP0wkfPXvOkX0FdG\nMEvtwEGeAk2Tcp+qpwlJBv6zER/5lmY/dK8uEXaW6CIwjr3Bi+26AYUu4OmYgOgb\nVnXGgjrKFGBwp/JcqtFt0sdS\n-----END PRIVATE KEY-----\n",
-//   "client_email": "cybermind-analytics-sheet-writ@cybermind-460717.iam.gserviceaccount.com",
-//   "client_id": "118293082723628519684",
-//   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-//   "token_uri": "https://oauth2.googleapis.com/token",
-//   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-//   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cybermind-analytics-sheet-writ%40cybermind-460717.iam.gserviceaccount.com",
-//   "universe_domain": "googleapis.com"
-// }

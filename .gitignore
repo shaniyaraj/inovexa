@@ -21,4 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Google Cloud Service Account Keys (sensitive)
+Back-end/config/service-account-key.json
 Back-end/service-account-key.json
