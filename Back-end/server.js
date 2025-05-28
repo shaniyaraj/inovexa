@@ -5,7 +5,11 @@ const { google } = require("googleapis");
 const cron = require('node-cron');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+origin: 'http://localhost:3000',
+methods: ['POST', 'GET']
+}));
+
 app.use(express.json());
 
 mongoose.connect("mongodb://localhost:27017/formdata");
