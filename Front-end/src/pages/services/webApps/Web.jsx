@@ -30,6 +30,7 @@ import usthav from '../../../assets/uthsav.webp';
 import sales from '../../../assets/sales1.webp';
 import learn from '../../../assets/learn2.webp';
 import baabee from '../../../assets/baabee2.webp';
+// import dmkImage from '../../assets/dmk2.webp'
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -68,43 +69,6 @@ const WebAppsPage = () => {
     { name: 'schoolnet', logo: schoolnet },
   ];
 
-  const portfolioData = [
-    {
-      id: 4,
-      title: 'Marketing Jobverse',
-      image: marketingJobverseImg,
-      gradient: 'orange-gradient',
-      features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
-    },
-    {
-      id: 5,
-      title: 'Uthsav',
-      image: usthav,
-      gradient: 'purple-gradient',
-      features: ['LMS', 'Job Search'],
-    },
-    {
-      id: 7,
-      title: 'Sales CRM',
-      image: sales,
-      gradient: 'purple-gradient',
-      features: ['LMS', 'Job Search'],
-    },
-    {
-      id: 8,
-      title: 'Learning Platform',
-      image: learn,
-      gradient: 'orange-gradient',
-      features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
-    },
-    {
-      id: 10,
-      title: 'BabeeTv',
-      image: baabee,
-      gradient: 'orange-gradient',
-      features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
-    },
-  ];
 
   return (
     <div>
@@ -172,45 +136,35 @@ const WebAppsPage = () => {
           ))}
         </div>
       </div>
+       <div className="portfolio-wrapper">
+  <h1 className="portfolio-heading">Projects Completed</h1>
 
-      {/* Projects */}
-      {/* <div className="portfolio-container">
-        <h1 className="portfolio-title">Projects Completed</h1>
-        <div className="portfolio-grid">
-          {portfolioData.map((project) => (
-            <div key={project.id} className={`portfolio-card`}>
-              <div className="card-label">{project.title}</div>
-              <div className={`image-container ${project.gradient}`}>
-                <img src={project.image} alt={`${project.title} Screenshot`} />
-              </div>
-              <h2 className="card-title">{project.title}</h2>
-              <div className="feature-buttons">
-                {project.features.map((feature, index) => (
-                  <button key={index} className="feature-btn">{feature}</button>
-                ))}
-              </div>
-            </div>
-          ))}
+      <div className="portfolio-simple">
+        <div className="portfolio-item">
+          <img src={marketingJobverseImg} alt="Inesh" className="portfolio-img" />
+          <h2 className="portfolio-title">Marketing Jobverse</h2>
         </div>
-      </div> */}
-      
-    <div className="portfolio-container">
-      <h1 className="portfolio-title">Our Works</h1>
-
-      <div className="portfolio-grid">
-        {portfolioData.map((project) => (
-          <div key={project.id} className="portfolio-card">
-            <div className="image-container">
-              <img src={project.image} alt={`${project.title} Screenshot`} />
-            </div>
-            <h2 className="card-title">{project.title}</h2>
-
-          </div>
-        ))}
+        <div className="portfolio-item">
+          <img src={usthav} alt="Sakkarapani" className="portfolio-img" />
+          <h2 className="portfolio-title">Uthsav</h2>
+        </div>
+        <div className="portfolio-item">
+          <img src={sales} alt="Sakkarapani" className="portfolio-img" />
+          <h2 className="portfolio-title">Sales CRM</h2>
+        </div>
+        <div className="portfolio-item">
+          <img src={learn} alt="Sakkarapani" className="portfolio-img" />
+          <h2 className="portfolio-title">Learning Platform</h2>
+        </div>
+        <div className="portfolio-item">
+          <img src={baabee} alt="Sakkarapani" className="portfolio-img" />
+          <h2 className="portfolio-title">Baabee TV</h2>
+        </div>
       </div>
-    </div>
+      
+    
  
-
+</div>
     </div>
   );
 };

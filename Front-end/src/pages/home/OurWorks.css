@@ -10,141 +10,7 @@ body {
 }
 
 .portfolio-container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0px;
-  background-color: transparent !important;
-}
-
-.portfolio-title {
-  text-align: center;
-  color: #333;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  font-weight: 700;
-}
-
-
-.portfolio-card {
-  height: 100%;
-  width: 100%;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  
-  background-color: transparent !important;
-  border: none;
-}
-
-
-
-.image-container {
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
- 
-  margin-bottom: 20px;
-  background-color: transparent !important;
-  
-}
-
-
- .image-container img {
-  width: 100%;
-  height: auto;
-  max-height: 230px; 
-  object-fit: contain;
-  mix-blend-mode: multiply;
-}
-
-
-
-.card-title {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  font-weight: 600;
-  color: #333;
-}
-
-
-.portfolio-card:hover {
-  transform: none !important;
-  box-shadow: none !important;
-  cursor: default !important;
-}
-
-
-@media (max-width: 1024px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .portfolio-title {
-    font-size: 2rem;
-  }
-
-  .portfolio-card {
-    width: 100%;
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 480px) {
-  .portfolio-container {
-    padding: 0 10px;
-  }
-
-  .portfolio-title {
-    font-size: 1.8rem;
-  }
-
-  .portfolio-card {
-    width: 100%;
-    max-width: calc(100vw - 20px);
-    height: auto;
-    min-height: 280px;
-  }
-
-  .image-container {
-    height: 200px;
-  }
-
-  .image-container img {
-    width: 150px;
-    height: 120px;
-  }
-
-  .card-title {
-    font-size: 1.1rem;
-  }
-} */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-   background-color: transparent !important;
-}
-
-.portfolio-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 20px auto;
   padding: 0px;
   background-color: transparent;
@@ -160,58 +26,103 @@ body {
 
 .portfolio-grid {
   display: grid;
-  align-items: stretch;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 30px;
+  gap: 40px;
   justify-items: center;
+  padding: 0;
 }
 
 .portfolio-item {
-  height: 320px;
-  width: 350px;
-  padding: 20px;
+  width: 500px !important;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
-  background-color: transparent;
+  align-items: center;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0;
 }
 
 .image-container {
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 500px !important;
+  height: 400px !important;
   overflow: hidden;
-  margin-bottom: 20px;
   background-color: transparent !important;
+  margin-bottom: 20px;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0;
 }
 
 .image-container img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  margin: 0 auto;
-  border-radius: 5px;
+  width: 500px !important;
+  height: 400px !important;
+  object-fit: cover !important;
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: block;
 }
 
 .item-title {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1200px) {
+  .portfolio-container {
+    max-width: 1000px;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 35px;
+  }
+  
+  .portfolio-item {
+    width: 450px !important;
+  }
+  
+  .image-container {
+    width: 450px !important;
+    height: 350px !important;
+  }
+  
+  .image-container img {
+    width: 450px !important;
+    height: 350px !important;
+  }
 }
 
 @media (max-width: 1024px) {
   .portfolio-grid {
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+  }
+  
+  .portfolio-item {
+    width: 400px !important;
+  }
+  
+  .image-container {
+    width: 400px !important;
+    height: 320px !important;
+  }
+  
+  .image-container img {
+    width: 400px !important;
+    height: 320px !important;
   }
 }
 
 @media (max-width: 768px) {
   .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
   }
 
   .portfolio-title {
@@ -219,8 +130,17 @@ body {
   }
 
   .portfolio-item {
-    width: 100%;
-    max-width: 400px;
+    width: 350px !important;
+  }
+  
+  .image-container {
+    width: 350px !important;
+    height: 280px !important;
+  }
+  
+  .image-container img {
+    width: 350px !important;
+    height: 280px !important;
   }
 }
 
@@ -233,23 +153,67 @@ body {
     font-size: 1.8rem;
   }
 
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .portfolio-item {
-    width: 100%;
+    width: 100% !important;
     max-width: calc(100vw - 20px);
-    height: auto;
-    min-height: 280px;
   }
-
+  
   .image-container {
-    height: 200px;
+    width: 100% !important;
+    height: 260px !important;
+    max-width: calc(100vw - 20px);
   }
-
+  
   .image-container img {
-    width: 150px;
-    height: 120px;
+    width: 100% !important;
+    height: 260px !important;
+    max-width: calc(100vw - 20px);
   }
 
   .item-title {
     font-size: 1.1rem;
   }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.portfolio-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+.portfolio-heading{
+  text-align: center;
+  margin-top:30px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-image {
+  width: 450px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.project-title {
+  margin-top: 12px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
 }
