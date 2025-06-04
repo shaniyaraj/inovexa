@@ -99,7 +99,7 @@
 //             </p>
 //             <a href="#" className='link'>Get in touch</a>
 //       </div>
-//       <footer className='foot'>Copyright © 2025 CyberMind Works. All rights reserved.
+//       <footer className='foot'>Copyright © 2025 Inovexa. All rights reserved.
 // </footer>
 //     </section>
     

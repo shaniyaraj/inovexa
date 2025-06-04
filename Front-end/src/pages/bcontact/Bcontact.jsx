@@ -9,7 +9,7 @@ const Info = () => {
       <div className="contact-container">
         {/* Left Info */}
         <div className="contact-info">
-          <h2 className="gradient-text">CyberMind Works</h2>
+          <h2 className="gradient-text">Inovexa</h2>
           <p>Have something to say? We are here to help. Fill<br />
            up the form or send email or give us a call.</p>
           <p>📍 10/15, K.M Towers - 1st Floor, Chakrapani Road,<br />Guindy, Chennai, Tamil Nadu, 600042</p>
@@ -28,7 +28,7 @@ const Info = () => {
         </div>
       </div>
 
-      <footer className='foot'>Copyright © 2025 CyberMind Works. All rights reserved.</footer>
+      <footer className='foot'>Copyright © 2025 Inovexa. All rights reserved.</footer>
     </section>
   );
 };

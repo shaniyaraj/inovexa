@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import cmwlogo from '../assets/cmwlogo.svg';
+import inovex from '../assets/inovex.jpg';
 
 function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -40,8 +40,8 @@ function Header() {
         </button>
 
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <img src={cmwlogo} alt="CyberMind Works Logo" />
-          <h1 style={{ margin: 0, fontSize: '22px', fontWeight: '620' }}>CyberMind Works</h1>
+          <img src={inovex} alt="Inovexa Logo"  />
+          <h1 style={{ margin: 0, fontSize: '22px', fontWeight: '620' }}>Inovexa</h1>
         </Link>
       </div>
 

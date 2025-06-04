@@ -14,7 +14,7 @@ function Header() {
         <div className="logo-image">
           <img src={cmwlogo} className="cyberlogo" alt="logo"/>
         </div> 
-        <h1 className="logo-text">CyberMind Works</h1>
+        <h1 className="logo-text">Inovexa</h1>
       </div>
 
       <nav className="main-nav">
@@ -515,7 +515,7 @@ function Footer() {
           </div>
 
           <div className="link-column">
-            <h1>CyberMind Works LLP</h1>
+            <h1>Inovexa LLP</h1>
             <ul>
               <li><a href="mailto:info@cybermindworks.com"><br />
                 10/15 K.M Towers - 1st Floor, Chakrapani Road,<br />
@@ -528,7 +528,7 @@ function Footer() {
         </div>
       </div>
       <div className="copyright">
-        <p>Copyright © 2025, CyberMind Works | All rights reserved.</p>
+        <p>Copyright © 2025, Inovexa | All rights reserved.</p>
       </div>
     </footer>
   );

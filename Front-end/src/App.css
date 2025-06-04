@@ -288,7 +288,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(to right, rgb(134, 54, 248), rgb(240, 32, 179), rgb(248, 71, 94), rgb(255, 148, 33));
+  background: linear-gradient(to right, rgb(72, 212, 255), rgb(15, 25, 217), rgb(116, 241, 88), rgb(255, 148, 33));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

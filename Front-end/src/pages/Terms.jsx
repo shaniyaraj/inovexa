@@ -6,7 +6,7 @@ import "./Terms.css";
 const TermsOfUse = () => {
   return (
     <div className="terms-container">
-      <h1 className="terms-title">CyberMind Works Terms of Use</h1>
+      <h1 className="terms-title">Inovexa Terms of Use</h1>
       <p className="last-updated">Last updated:- May 22, 2025</p>
 
         <section className="terms-content">
@@ -14,7 +14,7 @@ const TermsOfUse = () => {
             <p>
             These Terms and Conditions constitute a legally binding agreement made
             between you, whether personally or on behalf of an entity (“you”) and
-            CyberMind Works (“we,” “us” or “our”), concerning your access to and use
+            Inovexa (“we,” “us” or “our”), concerning your access to and use
             of the <Link to="/">www.cybermindworks.com</Link> website as well as mobile
             website or mobile application related, any other media form, media channel,
             linked, or otherwise connected thereto (collectively, the “Site”).

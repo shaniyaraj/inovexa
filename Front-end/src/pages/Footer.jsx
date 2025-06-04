@@ -49,7 +49,7 @@
 //           </div>
 
 //           <div className="link-column">
-//             <h1>CyberMind Works LLP</h1>
+//             <h1>Inovexa LLP</h1>
 //             <ul>
 //               <li><a href="mailto:info@cybermindworks.com"><br />
 //                 10/15 K.M Towers - 1st Floor, Chakrapani Road,<br />
@@ -62,7 +62,7 @@
 //         </div>
 //       </div>
 //       <div className="copyright">
-//         <p>Copyright © 2025, CyberMind Works | All rights reserved.</p>
+//         <p>Copyright © 2025, Inovexa | All rights reserved.</p>
 //       </div>
 //     </footer>
 //   )
@@ -127,7 +127,7 @@ const Footer = () => {
           </div>
 
           <div className="link-column">
-            <h1>CyberMind Works LLP</h1>
+            <h1>Inovexa</h1>
             <ul>
               <li>
                 {/* <a href="mailto:info@cybermindworks.com"> */}
@@ -136,16 +136,16 @@ const Footer = () => {
               </li>
               {/* <li><a href="tel:+917500053535">PH: +91 75000 53535</a></li> */}
               <p>PH: +91 75000 53535</p>
-              {/* <li><a href="https://www.cybermindworks.com" target="_blank" rel="noopener noreferrer">www.cybermindworks.com</a></li> */}
-              <p>www.cybermindworks.com</p>
-              <li><a href="mailto:contact@cybermindworks.com">contact@cybermindworks.com</a></li>
+              {/* <li><a href="https://www.inovexa.com" target="_blank" rel="noopener noreferrer">www.cybermindworks.com</a></li> */}
+              <p>www.inovexa.in</p>
+              <li><a href="mailto:contact@cybermindworks.com">contact@inovexa.com</a></li>
             </ul>
           </div>
         </div>
       </div>
 
       <div className="copyright">
-        <p>Copyright © 2025, CyberMind Works | All rights reserved.</p>
+        <p>Copyright © 2025, Inovexa | All rights reserved.</p>
       </div>
     </footer>
   );

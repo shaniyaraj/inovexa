@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
       </p>
 
       <p className="privacy-text">
-        CyberMind Works recognises the importance of maintaining your privacy. We value your privacy and appreciate your trust in us. This Policy describes how we treat user information we collect on www.cybermindworks.com and other offline sources. This Privacy Policy applies to current and former visitors to our website and to our online customers. By visiting and/or using our website, you agree to this Privacy Policy & 
+        Inovexa recognises the importance of maintaining your privacy. We value your privacy and appreciate your trust in us. This Policy describes how we treat user information we collect on www.cybermindworks.com and other offline sources. This Privacy Policy applies to current and former visitors to our website and to our online customers. By visiting and/or using our website, you agree to this Privacy Policy & 
         these <Link to="/terms">Terms and Conditions</Link>.
       </p>
 

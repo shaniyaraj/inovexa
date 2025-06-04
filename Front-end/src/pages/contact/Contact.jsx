@@ -464,7 +464,7 @@ export default function ContactForm() {
           <p className="form-subtitle">
             Fill out the form or write to us at:{' '}
             <a href="mailto:contact@cybermindworks.com" className="email-link">
-              contact@cybermindworks.com
+              contact@Inovexa.com
             </a>
           </p>
         </div>
