@@ -28,7 +28,8 @@ import schoolnet from '../../../assets/schoolnetLogo.webp';
 import marketingJobverseImg from '../../../assets/marketing2.webp';
 import usthav from '../../../assets/uthsav.webp';
 import sales from '../../../assets/sales1.webp';
-import learn from '../../../assets/learn2.webp';
+// import learn from '../../../assets/learn2.webp';
+import freelancePlatformImg from '../../../assets/freelance2.png';
 import baabee from '../../../assets/baabee2.webp';
 // import dmkImage from '../../assets/dmk2.webp'
 
@@ -153,8 +154,8 @@ const WebAppsPage = () => {
           <h2 className="portfolio-title">Sales CRM</h2>
         </div>
         <div className="portfolio-item">
-          <img src={learn} alt="Sakkarapani" className="portfolio-img" />
-          <h2 className="portfolio-title">Learning Platform</h2>
+          <img src={freelancePlatformImg} alt="Sakkarapani" className="portfolio-img" />
+          <h2 className="portfolio-title">Freelance Platform</h2>
         </div>
         <div className="portfolio-item">
           <img src={baabee} alt="Sakkarapani" className="portfolio-img" />

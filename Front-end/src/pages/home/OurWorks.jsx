@@ -2,12 +2,12 @@ import React from "react";
 import "./OurWorks.css";
 import main2 from '../../assets/main2.png';
 import freelancePlatformImg from '../../assets/freelance2.png';
-import reports from '../../assets/reports.png';
+// import hyyper from '../../assets/hyyper.png';
 import marketingJobverseImg from '../../assets/marketing2.webp';
 import usthav from '../../assets/uthsav.webp';
 import Farmyng from '../../assets/farm2.webp';
 import sales from '../../assets/sales1.webp';
-import learn from '../../assets/learn2.webp';
+// import learn from '../../assets/learn2.webp';
 import Profitabill from '../../assets/profitable1.webp';
 import baabee from '../../assets/baabee2.webp';
 import inesh from '../../assets/inesh2.webp';
@@ -38,14 +38,14 @@ const OurWorks = () => {
         <h2 className="project-title">Freelance Platform</h2>
       </div>
 
-       <div className="project">
+       {/* <div className="project">
         <img
-          src={reports}
+          src={hyyper}
           alt="Profitabill"
           className="project-image"
         />
         <h2 className="project-title">Hyperlaunch Platform</h2>
-      </div>
+      </div> */}
 
        <div className="project">
         <img
@@ -83,14 +83,14 @@ const OurWorks = () => {
         <h2 className="project-title">Sales CRM</h2>
       </div>
 
-      <div className="project">
+      {/* <div className="project">
         <img
           src={learn}
           alt="Profitabill"
           className="project-image"
         />
         <h2 className="project-title">Learning Platform</h2>
-      </div>
+      </div> */}
 
 
       <div className="project">
