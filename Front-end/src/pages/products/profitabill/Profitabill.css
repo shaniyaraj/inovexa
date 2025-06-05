@@ -62,6 +62,7 @@
 }
 
 .feature-image {
+  background-color: transparent !important;
   flex: 1;
   min-width: 300px;
   display: flex;

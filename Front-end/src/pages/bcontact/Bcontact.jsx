@@ -13,7 +13,7 @@ const Info = () => {
           <p>Have something to say? We are here to help. Fill<br />
            up the form or send email or give us a call.</p>
           <p>📍 10/15, K.M Towers - 1st Floor, Chakrapani Road,<br />Guindy, Chennai, Tamil Nadu, 600042</p>
-          <p>📧 contact@cybermindworks.com</p>
+          <p>📧 contact@inovexa.com</p>
           <p>📞 +91 75000 53535</p>
         </div>
 

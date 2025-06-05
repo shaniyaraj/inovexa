@@ -8,11 +8,11 @@ const PrivacyPolicy = () => {
       <h1 className="privacy-title">Privacy Terms</h1>
 
       <p className="privacy-subtitle">
-        This Privacy Policy applies to the <strong>www.cybermindworks.com</strong>
+        This Privacy Policy applies to the <strong>www.inovexa.com</strong>
       </p>
 
       <p className="privacy-text">
-        Inovexa recognises the importance of maintaining your privacy. We value your privacy and appreciate your trust in us. This Policy describes how we treat user information we collect on www.cybermindworks.com and other offline sources. This Privacy Policy applies to current and former visitors to our website and to our online customers. By visiting and/or using our website, you agree to this Privacy Policy & 
+        Inovexa recognises the importance of maintaining your privacy. We value your privacy and appreciate your trust in us. This Policy describes how we treat user information we collect on www.inovexa.com and other offline sources. This Privacy Policy applies to current and former visitors to our website and to our online customers. By visiting and/or using our website, you agree to this Privacy Policy & 
         these <Link to="/terms">Terms and Conditions</Link>.
       </p>
 
@@ -108,7 +108,7 @@ const PrivacyPolicy = () => {
 
      <h3 className="section-heading">EMAIL OPT - OUT</h3>
     <p>
-        You can opt out of receiving our marketing emails. To stop receiving our promotional emails, please email contact@cybermindworks.com. It may take about ten days to process your request. Even if you opt out of getting marketing messages, we will still be sending you transactional messages through email and SMS about your purchases.
+        You can opt out of receiving our marketing emails. To stop receiving our promotional emails, please email contact@inovexa.com. It may take about ten days to process your request. Even if you opt out of getting marketing messages, we will still be sending you transactional messages through email and SMS about your purchases.
     </p>
 
     <h3 className="section-heading">THIRD PARTY SITES</h3> 
@@ -128,7 +128,7 @@ const PrivacyPolicy = () => {
 
     <h3 className="section-heading">CONTACT US</h3>
     <p>
-        For any details, reach out to us at <a href="#">contact@cybermindworks.com <span>&</span> +91 75000 53535.</a>
+        For any details, reach out to us at <a href="#">contact@inovexa.com <span>&</span> +91 75000 53535.</a>
     </p>
     </div>
   );

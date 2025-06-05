@@ -1,10 +1,6 @@
 import React from 'react';
 import '../mobileApps/Mobile.css';
 import './Web.css';
-// import kotlin from '../../../assets/kotlin.png';
-// import android from '../../../assets/androidStudio.png';
-// import flutter from '../../../assets/flutter.svg';
-// import swift from '../../../assets/swift.svg';
 import reactLogo from '../../../assets/react.svg';
 import gatsby from '../../../assets/gatsby.png';
 import nextjs from '../../../assets/nextjs.png';
@@ -128,13 +124,10 @@ const WebAppsPage = () => {
       <div className="mobile-app-overview">
         <h1>Web Application Development Overview</h1>
         <p>
-         We are one of the few companies that develop applications from scratch using the latest cutting edge technologies. As a result our <br />application performs better, scales better.
-          We have our own set of libraries that are battle tested - this helps us build applications faster.
-
-
-        </p>
+         We are one of the few companies that develop applications from scratch using the latest cutting edge technologies. As a result our application performs better, scales better.
+          We have our own set of libraries that are battle tested - this helps us build applications faster.</p>
         <p>
-        We have developed web applications that are capable of handling millions of transactions per week. We partner with early stage startups,<br />
+        We have developed web applications that are capable of handling millions of transactions per week. We partner with early stage startups,
          SMBs and help them get their product to market faster. Our websites have ranked better by Google audits and other performance measuring tools.
 
 
@@ -181,7 +174,7 @@ const WebAppsPage = () => {
       </div>
 
       {/* Projects */}
-      <div className="portfolio-container">
+      {/* <div className="portfolio-container">
         <h1 className="portfolio-title">Projects Completed</h1>
         <div className="portfolio-grid">
           {portfolioData.map((project) => (
@@ -199,7 +192,25 @@ const WebAppsPage = () => {
             </div>
           ))}
         </div>
+      </div> */}
+      
+    <div className="portfolio-container">
+      <h1 className="portfolio-title">Our Works</h1>
+
+      <div className="portfolio-grid">
+        {portfolioData.map((project) => (
+          <div key={project.id} className="portfolio-card">
+            <div className="image-container">
+              <img src={project.image} alt={`${project.title} Screenshot`} />
+            </div>
+            <h2 className="card-title">{project.title}</h2>
+
+          </div>
+        ))}
       </div>
+    </div>
+ 
+
     </div>
   );
 };

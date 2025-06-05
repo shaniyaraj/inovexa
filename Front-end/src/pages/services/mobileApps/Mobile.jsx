@@ -153,7 +153,7 @@ const MobileAppsPage = () => {
       </div>
 
       {/* Projects Section */}
-      <div className="portfolio-container">
+      {/* <div className="portfolio-container">
         <h1 className="portfolio-title">Projects Completed</h1>
         <div className="portfolio-grid">
           {portfolioData.map((project) => (
@@ -171,7 +171,23 @@ const MobileAppsPage = () => {
             </div>
           ))}
         </div>
+      </div> */}
+      <div className="portfolio-container">
+      <h1 className="portfolio-title">Our Works</h1>
+
+      <div className="portfolio-grid">
+        {portfolioData.map((project) => (
+          <div key={project.id} className="portfolio-card">
+            <div className="image-container">
+              <img src={project.image} alt={`${project.title} Screenshot`} />
+            </div>
+            <h2 className="card-title">{project.title}</h2>
+
+          </div>
+        ))}
       </div>
+    </div>
+ 
     </div>
   );
 };

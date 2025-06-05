@@ -15,7 +15,7 @@ const TermsOfUse = () => {
             These Terms and Conditions constitute a legally binding agreement made
             between you, whether personally or on behalf of an entity (“you”) and
             Inovexa (“we,” “us” or “our”), concerning your access to and use
-            of the <Link to="/">www.cybermindworks.com</Link> website as well as mobile
+            of the <Link to="/">www.inovexa.com</Link> website as well as mobile
             website or mobile application related, any other media form, media channel,
             linked, or otherwise connected thereto (collectively, the “Site”).
             </p>

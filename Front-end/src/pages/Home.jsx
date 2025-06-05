@@ -517,12 +517,12 @@ function Footer() {
           <div className="link-column">
             <h1>Inovexa LLP</h1>
             <ul>
-              <li><a href="mailto:info@cybermindworks.com"><br />
+              <li><a href="mailto:info@inovexa.com"><br />
                 10/15 K.M Towers - 1st Floor, Chakrapani Road,<br />
                 Guindy, Chennai, Tamil Nadu, 60004</a></li>
               <li><a href="tel:+1234567890">ph: +01 75000 53535</a></li>
-              <li><a href='#'>www.cybermindworks.com</a></li>
-              <li><a href="mailto:info@cybermindworks.com">contact@cybermindworks.com</a></li>
+              <li><a href='#'>www.inovexa.com</a></li>
+              <li><a href="mailto:info@inovexa.com">contact@inovexa.com</a></li>
             </ul>
           </div>
         </div>
